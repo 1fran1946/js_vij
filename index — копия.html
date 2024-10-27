@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- ver15 support registra  -->
-<html lang="en">
+<!-- ver.16 support registra  -->
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
   
-  <title>Шифр Виженера 15</title>
+  <title>Шифр Виженера 16</title>
   <style>
 *:not(hr), *::after, 
 *::before {
@@ -55,23 +55,22 @@ font-size:15px;
 [id^='eva']{display: none}
 
 
-.m_0:checked ~svg #eva0{display: block !important}
-.m_1:checked ~svg #eva1{display: block}  
-.m_2:checked ~svg #eva2{display: block}   
-.m_3:checked ~svg #eva3{display: block}  
-.m_4:checked ~svg #eva4{display: block}
-.m_5:checked ~svg #eva5{display: block} 
-.m_6:checked ~svg #eva6{display: block}
-.m_7:checked ~svg #eva7{display: block}
-.m_8:checked ~svg #eva8{display: block}
-.m_9:checked ~svg #eva9{display: block}
-.m_10:checked ~svg #eva10{display: block}
-.m_11:checked ~svg #eva11{display: block}
-.m_12:checked ~svg #eva12{display: block}
-.m_13:checked ~svg #eva13{display: block}
-.m_14:checked ~svg #eva14{display: block}
-.m_15:checked ~svg #eva13{display: block}
-
+div:has(div .m_0:checked) +#coat #cccp #eva0{display: block !important}
+div:has(div .m_1:checked) +#coat #cccp #eva1{display: block}  
+div:has(div .m_2:checked) +#coat #cccp #eva2{display: block}   
+div:has(div .m_3:checked) +#coat #cccp #eva3{display: block}  
+div:has(div .m_4:checked) +#coat #cccp #eva4{display: block}
+div:has(div .m_5:checked) +#coat #cccp #eva5{display: block} 
+div:has(div .m_6:checked) +#coat #cccp #eva6{display: block}
+div:has(div .m_7:checked) +#coat #cccp #eva7{display: block}
+div:has(div .m_8:checked) +#coat #cccp #eva8{display: block}
+div:has(div .m_9:checked) +#coat #cccp #eva9{display: block}
+div:has(div .m_10:checked) +#coat #cccp #eva10{display: block}
+div:has(div .m_11:checked) +#coat #cccp #eva11{display: block}
+div:has(div .m_12:checked) +#coat #cccp #eva12{display: block}
+div:has(div .m_13:checked) +#coat #cccp #eva13{display: block}
+div:has(div .m_14:checked) +#coat #cccp #eva14{display: block}
+div:has(div .m_15:checked) +#coat #cccp #eva15{display: block}
 
 .ula2{
 	padding: 13px 0;
@@ -120,8 +119,9 @@ li{
 }
 
 textarea{
-	margin: 100px auto;
+	margin: 0px auto;
 	padding: 3px;
+	width:100%;
 	font-size: 16px;	
 	border: 2px solid maroon;
 	font-family: monospace;
@@ -306,172 +306,29 @@ textarea{
 </head>
 <body>
 
-<!--<p>K:\!\projAll\d7_vij</p>
-<a 
-https://otvet.mail.ru/question/231370125
-href="https://www.cyberforum.ru/cryptography/thread3016624.html">https://www.cyberforum.ru/cryptography/thread3016624.html</a><br>
-https://www.cyberforum.ru/cryptography/thread2973628.html еще один
-https://otvet.mail.ru/question/211116951
-https://otvet.mail.ru/question/228847861
-https://www.cyberforum.ru/cryptography/thread3034197.html
 
--->
-<div class="container100" style="background:#def;position: relative;">
-<div class="ver">v15</div>
+<section id="vigener" style="position: relative; margin:auto; padding-bottom:16px;
+max-width:1080px; height: fit-content; min-height: 111px;
+border:6px solid #ded;border-radius:6px;
+background: #dead;">
+<div class="ver">v16</div>
 
-<ul id="ul1" class="ula container"></ul>
-
-
-
-
-
-<!-- МАРТ
-ОПХБОЫХСЯСЫМГАТСОЫ_ТТЕЭЪС_ШЯ_О_ЮМЦШ_ЩНКЫЛВХЬЛЯП_ЭНЮФМТХЭЗНЮСЫРШЩМДВЮМЛАРЛЯПЩЩАЫСЪ_ЦЧЧЕЧЯЪМПЪЛБЩЗЮФЪМПФСКРЖЛИАГЪРШИССЪЪА_ЯЧЬИЮЦМХПЯМЗТТЩНКЖЛТРЬЛПЮСЮЕЬСЩОТМШ_ЬТЮЕ_ЪМЛРЮЛИЧСЦОБ_ЬЫДСЮОУЦМ_ФЧЧАЫЪЛИЭВЮРВЮСНБМЛИП_ЬУЦЪС_БДЮ_ТВС_Я_ЩЯБЯЪ_Э
- -->
-
-	
-
-<header class="container" style="padding: 2px 0 22px;">
-<div class="container" style="">
-	<div style="display: flex; justify-content:space-between;align-items: center;">
-
-		<div style="width:100px">
-		</div>
-	</div>
-<div style="position: relative;">
-
-
-<!-- 
-УН_СРРАРЯХЦБНИЗЙРСЩНЯОЦЯБЗАСРФЖУТАКСЛЦЯЖЯЯПФСТЯЧУНСЛЗЩОИИ ЙЪЧМГЯЬФСРШ_СВФБФСГЗАППЯБХЪЙЗ_ЕРЯАРЩАХЪЦЗОХЬЧЛЪЪГХ_ЖЗВЗИГЙНСЕИЯОВЖАЧБЙХЗЙЧЪБУНОЦСГИШОЦЧАТТЛЗФАКМШРВМРГЖУНОЦЫАЪЧЦХЪЛНСУИЬАРС ГЗ_ВУТТЪЪАЩФ_ПЪАЩЬБПТОХ_ЖЗЙЖХЯПХ_НЗЯБЗАЖШФЬССГПХМЖЦАТТЗНГТЖСП 
-
- -->
-<textarea class="container100" id="edit1" rows="10" cols="45">
-
-</textarea>
-
-<textarea class="container100" id="edit2" rows="10" cols="45">
-</textarea>
-
-
-
-<textarea class="container100" id="edit3" rows="10" cols="45">
-</textarea>
+<div id="trip" style="position: relative;">
+	<textarea id="edit1" rows="10" cols="45"></textarea>
+	<textarea id="edit2" rows="10" cols="45" style="display: none;"></textarea>
+	<textarea id="edit3" rows="10" cols="45" style="display: none;"></textarea>
 </div>
 
-<div id="dog" class="container">
-</div>
+<div id="keyt" style="margin: 0 auto; display: flex; width:97%; background: #ded; "></div>
+
+<div id="coat" style="margin: auto; padding:3px;background:red;"></div>
 
 
 
 
 
+</section>
 
-<div>
-
-<table id="nos1" style="width:100%;background: linear-gradient(#e5eeeb, #83b0c4);"><tr>
-<td style="width:150px;">
-<div style="
-	display: flex; justify-content:space-between;align-items: center;
-	height:32px;
-	padding-left:10px; border:1px solid gray;border-radius:4px;">
-		<input id="sam1" type="checkbox">
-		<label class="act" for="sam1" onclick="god[0]=!god[0];newgame(keylen,gotnes());"> Ё </label>
-		<input id="sam2" type="checkbox">
-		<label class="act" for="sam2" onclick="god[1]=!god[1];newgame(keylen,gotnes());"> Ъ </label>		
-		<input id="sam3" type="checkbox">
-		<label class="act" for="sam3" onclick="god[2]=!god[2];newgame(keylen,gotnes());"> _ </label>	
-	</div> 
-</td>
-<td style="">
-	<div id="fe1" style="
-	padding-left:10px;	
-	display:flex;
-	align-items:center;
-	height:32px;
-	border:1px solid gray;;
-	">
-
-	</div>
-</td>
-</tr></table>		
-</div>
-
-
-<div id="nos2" class="container wrot" style="flex-wrap: wrap;">
-
-	<div class="krot rott3" onclick="newgame(keylen);geon=edit1.value;">run</div>
-	<div class="krot rott3" onclick="edit1.value=geon;newgame(keylen);">reset</div>
-	<div class="krot rott3" onclick="geon='';edit1.value='';edit2.value='';edit3.value='';gopp();">clear</div>
-
-</div>
-
-<div id="nos3" class="container wrot" style="flex-wrap: wrap;">
-	<div style="padding:9px;width:fit-content;height:45px;
-	border:1px solid gray;border-radius:4px;
-	background: linear-gradient(#e5eeeb, #83b0c4);
-	">
-		<select id="lik" onchange="geon='';wax(this.value)" style="width:60px;border:1px solid cyan;">
-		  <option value="1">П 1</option>
-		  <option value="2">П 2</option>  
-		  <option value="3">П 3</option> 
-		  <option value="4">П 4</option> 	
-		  <option value="5">П 5</option> 
-		  <option value="6">П 6</option>		  
-		  <option value="7">П 7</option><!--	-->	  
-		</select>
-	</div>
-
-	<div class="krot rott1" onclick="cury.push(cury.shift());move('z');">&#8592;</div>
-	<div class="krot rott2" onclick="cury.unshift(cury.pop());move('z');">&#8594;</div>
-
-		<div id="hobs" style="padding:9px;display:inline-block;
-		width:fit-content;height:45px;
-		border:1px solid gray;
-		border-radius:4px;
-		background: linear-gradient(#e5eeeb, #83b0c4);
-		">
-		</div>
-</div>
-
-
-
-<!-- широко экранное меню -->
-<table id="pane" style="width:100%;height:40px;
-text-align:center;"><tr style="background: linear-gradient(#e5eeeb, #83b0c4);">
-<td style="width:150px;">
-	<div style="display:flex;justify-content:space-between;align-items: center;
-	padding:0 10px;">
-		<input id="saw1" type="checkbox">
-		<label class="acg" for="saw1" onclick="god[0]=!god[0];newgame(keylen,gotnes());"> Ё </label>
-		<input id="saw2" type="checkbox">
-		<label class="acg" for="saw2" onclick="god[1]=!god[1];newgame(keylen,gotnes());"> Ъ </label>		
-		<input id="saw3" type="checkbox">
-		<label class="acg" for="saw3" onclick="god[2]=!god[2];newgame(keylen,gotnes());"> _ </label>
-	</div>	
-</td>
-<td style="" id="fe2">A</td>
-<td style="width:24px;"><label style="display:flex;justify-content:center;height:100%;" ><input type="checkbox" id="larv" name="para" onchange="blind=blind^1; move('z')"></label></td>
-<td style="width:80px;" onclick="newgame(keylen);geon=edit1.value;">run</td>
-<td style="width:80px;" onclick="edit1.value=geon;newgame(keylen);">reset</td>
-<td style="width:80px;" onclick="geon='';edit1.value='';edit2.value='';edit3.value='';gopp();">clear</td>
-<td style="width:70px;">
-		<select id="lyk" onchange="geon='';wax(this.value);lik.value=this.value;" style="width:60px;border:1px solid cyan;">
-		  <option value="1">П 1</option>
-		  <option value="2">П 2</option>  
-		  <option value="3">П 3</option> 
-		  <option value="4">П 4</option> 	
-		  <option value="5">П 5</option> 
-		  <option value="6">П 6</option> 		  
-		  <option value="7">П 7</option><!-- -->		  
-		</select>
-</td>
-<td style="width:60px;" onclick="cury.push(cury.shift());move('z');">&#8592;</td>
-<td style="width:60px;" onclick="cury.unshift(cury.pop());move('z');">&#8594;</td>
-<td style="width:90px;" id="xeon"></td>
-
-
-</tr>
-</table>
 
 <script>
 // ифейс кардинально изменен в стиде калькулятора 26.12.2022
@@ -489,32 +346,32 @@ window.addEventListener('resize',()=>{
 /************************************/	
 var bral=[
 {},
-{n:3,cif:
+{n:3,cif://1
 `уН_срраряХЦБНИЗйРСЩНЯОЦЯБЗАСРФЖУТАКСЛЦЯЖЯЯПФСТЯЧУНСЛЗЩОИИ ЙЪЧМГЯЬФСРШ_СВФБФСГЗАППЯБХЪЙЗ_ЕРЯАРЩАХЪЦЗОХЬЧЛЪЪГХ_ЖЗВЗИГЙНСЕИЯОВЖАЧБЙХЗЙЧЪБУНОЦСГИШОЦЧАТТЛЗФАКМШРВМРГЖУНОЦЫАЪЧЦХЪЛНСУИЬАРС ГЗ_ВУТТЪЪАЩФ_ПЪАЩЬБПТОХ_ЖЗЙЖХЯПХ_НЗЯБЗАЖШФЬССГПХМЖЦАТТЗНГТЖСП
 `},
-{n:6,cif:
+{n:6,cif://2
 `ХАриуаъь ррргшанмх дуя наъих, вьчксуиуь уешьёзпуё збдвчы — эуо пе чрпбнефа елб мыжшип, чъо оа срцгсаомррпввнре тврю оииню тшауяф.вг, рёббтз —сёрюепньй пашое, и иеуаём, щтцб г ввшмй сагоъе ройдшагом нзш, гоймцжоо, софод, и улычйлуя иы пн даф псиеолео`},
 
-{n:3,cif:
+{n:3,cif://3
 `ХЬШЩУМВЬШЖ_ЫГОМД_ЫЯУЯЬЧМАОФФТМЦЦСАЬРБНОГЦЯФЫЮЮЬРБН ЩФ_Т _ОЯ
 ЬШНУЬФФЮХЯОМЧУЪЬОШПЫНТНХШУЛУШЫЕЬЭФММВЮЫДЩНЦЦШФН ТЧЬМЬЪ
 ЛУАУЩНЬГЦМЪЦФАЦМКОЭЯХМХУОХЦСЪНЬГЬАЩЯЮБЮМ_ОЯЩЪНЕЦЧЬ НЧЩЪОГЦС
 ЪЯЧБСЫУАЪЬРТГЯХЕУЯФНЬБЫЛЯНГЕЬМ_ЬУАЬМВЬЮЕЮЫЬ_ИУЪТИО ЪЬДТДШЫЩН_Д`},
 		
-{n:4,cif:		
+{n:4,cif://4		
 `МЕЩИЯРЕЕЗЪУСУГКИЩТЩЛГКЮЮЪФЙ_МО Й_ЭУЛННРУЯЗХРКЩХЛ_КВЪЕШФЩНИОЖ
 НВШККЦПЪЬЕХРРИШКМЫКЕКРВШАЗНЩМЧ ГХТМЛЬКИШКИЗЗРННЖКВЗФРТРВМАХН
 ЩВЩНУХЗГНТЦПЛТЦЕКПШИСДНВБЕФВЩТ ЧУЛВРХЖ_РРЯОШПЛЦРАКВЗНЩМЧЯИТН`},
 
 		
-{n:5,cif:		
+{n:5,cif:	//5	
 `ЧКВЮЪОКБРЮЛЧЯКИЛТСЕЦРДУГЗСХРПЫКЧЦЙСЛФАЖВСЦРВШМДБГБ СЬЫЯХОДТЙИРУУМХНУЬМЗЪДРПЫШГРПГЭТЛЮЮЛЦЦКФЛКЬЖХЛУТЯХ ЭКЭГМЦЕРЙЫПРЩЮШЛУХЛИЛГЭИИЛЗЯЕАСДТМАЗЭЯБГЛФЬМЖЦУФМХ ЦЕЭЛФЛДРЮЖЛЧЦУХЫУАЮИТКРЙЫЮДРКГТКВЮЧЖЧМЮХРЗЦПЗФДНРЮ ЛКЬЪХФДБМЖЩЕРАБСЦВГХЬЕБРИЮДРЖКЛПЯОВФДБЮБМРЯЙЫЮЦВАЦ`},		
-{n:5,cif:		
+{n:5,cif:	//6	
 `IPCXMIBWVTNBMJQBMFQYMITIMHEVVMFDFPGDZQNPRZBDVHTINTNBMLQRMABO_WYDIPCXMQUDFPGDG_GDANBWRVFM_OBBABBXAHUGUWQPMH_SGHUIRUBRAABXAHNINZPDNV_XUQPKMHYLKHKJMTKXFTGDUIPWMKCQRHWTMPGVRHCRQHUEIHQYDHYEDUBJVZGDNVFDABTDTWQHM_WTBMTDNVFDABTDTZGEFHEEESBSSHTIQHYM_MBLRHOMTPVDTMVDRVXMABUDNVFDRVXBMQUDNHOSEABXRZTMOTGDFPKRTHCRQHYSGTFDEXQMYHCRKJQHKHUD_IVYDMBDVHEIDACM_T_DIQNPMVQXMINPADBLNVUD_IVYDMBXAHDIM_RSVTGHMHKDNUBLV_BFR_VDSZKI_LBE_LBMMDKPYHCPII_WMDCXPPBSHMTDUQODNVFDEMGDFPCXMPGDV_BRAABPRLBM_AQDNV_DFMOTFIVMAVUDMJGWVLGWMQHDUIPWMKCQRHJIDMBLRHOMTPVDN_MDZMBXAHNIFHJMZHJEHMBWAUGDSTQYDHQRMKTIQQVDNVFDFPCXMQBGABNHMVQXMLQDMNNSGZBMEHQRRHVLVVIDNVFDSZKI_LULVXBMEHCRAAJIDHCRQHVLRFBWUWWPQHPSFHDIMKQRSBUIQHB_UFBXUMB_AZFWMITIM_RIYABHVNHIDMPXYFBE_LBQRIPDCBKXRHFMSNGVRVVDFPKRT_BDRCGVKJQHKHEE_HUIRHVLNA`},		
-{n:4,cif:		
+{n:4,cif:	//7	
 `EB'F UNQTOJA NTZ BUK DQFZKZL UB KEKWBVUJ IEK OBVRH PBZHG QKXIGKZ QA YYPBRWZYE YQEIHMF, HQB GNA BJU IIVT PPRUNQRY CQIK PPR INMQOP MVZDME ZK BUK MCRKJ UNZETQG KN SRWVQKNA JNK ENY W EVLA WS CETYOWU GNA KBTMCRXKZ, BX PW N HEAUUL WQU KN OGUMHD, SPB CWA JOHTVGI'A UGHN-OXKBUKN IAJ ADRTPCNRHG OKYIZK W ZRMAVG UB MAMHIAJ EV UOO IOYAVPK.`},//;newgame(4);
 
-{n:1,cif:
+{n:1,cif: //8
 'B atox atkgxllxw max latwhpl matm lmkbwx ykhf \n'+
 'phkew mh phkew mh lhp wxtma tgw ftwgxll. \n'+
 'ammil://ppp.rhnmnux.vhf/ptmva?o=IDU-14PJtyR'},
@@ -685,9 +542,8 @@ function move(x,y){
 	edit3.value=cotty(txt);	
 	
 	 //ключ зашифровки
-	fe1.innerText=
-		cury.reduce((a,b)=>a+=ac[(2*ac.length-b-blind)%ac.length],'');
-	fe2.innerText=fe1.innerText;	
+	//fe1.innerText=cury.reduce((a,b)=>a+=ac[(2*ac.length-b-blind)%ac.length],'');
+	//fe2.innerText=fe1.innerText;	
 }
 
 
@@ -747,6 +603,7 @@ function pars1e(x,y){
 	if (nalf==0){god=[false,false,false]}//ru0
 	if (nalf==6){god=[false,true,true]}	//ru7
 	if (nalf==2){god=[true,false,true]}	//ru8	
+	/*
 	sam1.checked=god[0];sam1.disabled=!god[0];
 	sam2.checked=god[1];sam2.disabled=!god[1];
 	sam3.checked=god[2];sam3.disabled=!god[2];	
@@ -768,6 +625,7 @@ function pars1e(x,y){
 	if(!saw1.checked){gina[0].onclick=null}
 	if(!saw2.checked){gina[1].onclick=null}	
 	if(!saw3.checked){gina[2].onclick=null}	
+	*/
 	}
 	else{
 	ac=affa[y-1].buk; asse=affa[y-1].fq;	
@@ -835,9 +693,9 @@ function newgame(x,y){
 	edit3.style.display='block';
 	edit2.style.display='block'; 
 	 //ключ зашифровки
-	fe1.innerText=//'111111';
+	//fe1.innerText=//'111111';
 		cury.reduce((a,b)=>a+=ac[(2*ac.length-b-blind)%ac.length],'');
-	fe2.innerText=fe1.innerText;
+	//fe2.innerText=fe1.innerText;
 	move('z');
 	}
 
@@ -966,16 +824,28 @@ function gotnes(){// выбор алфавита исходя из галок
 function kakava(){// добавление html методом шаблон
 	let shk='';
 	for (let i=0;i<keylen;i++)shk+=
+	'<div>\n'+
 	'<input type="radio" id="pv'+i+'" class="m m_'+i+'" name="kj" value="'+i+'"'+((!i)?' checked':'')+'>\n'+
-	'<label class="jdb" for="pv'+i+'" onclick="move(\'y\','+i+')">A</label>\n';
-		dog.innerHTML=shk+
+	'<label class="jdb" for="pv'+i+'" onclick="move(\'y\','+i+')">A</label>\n'+
+	'</div>\n'
+	;
+		keyt.innerHTML=shk;//+
 
+		coat.innerHTML=
+'<svg id="cccp" '+ 
+'style="width:100%; display: block; margin: 0px auto; width: 100%;" '+
+'onclick="if((event.clientX)>(keyt.offsetLeft+keyt.offsetWidth/2)){move('+"'x'"+',-1)}else{move('+"'x'"+',+1)}"'+
+'viewBox="0 0 15 4" fill="none">'+
+'<rect x="0" y="0" width="15" height="4" fill="#fed"></rect>'+		
+		
+	/*	
 	'<svg class="container100" id="cccp"'+
 	'onclick="'+
-	'if((event.clientX)>(dog.offsetLeft+dog.offsetWidth/2))'+
+	'if((event.clientX)>(keyt.offsetLeft+keyt.offsetWidth/2))'+
 	"{move('x',-1)}else{move('x',+1)"+'}"'+
 	'style="margin-top:1px;" viewBox="0 0 15 4" fill="none">'+
 	'<rect x="0" y="0" width="15" height="4" fill="#fed"/>'+
+	*/
 
 	'<polygon id="poul" points="0 0 7 1 15 0" '+
 	'stroke="maroon" opacity="0.5" '+
@@ -1001,11 +871,11 @@ function sro(xxx){//построение вероятных длин ключа
 	);//geon='';geon='';
 	let cane=
 
-	'<select id="satr" onchange="newgame(+this.value);this.blur();uran.blur();"'+
+	'<select id="satr" onchange="(+this.value);this.blur();uran.blur();"'+
 	'style="width:90px;border:1px solid cyan;border-radius:4px">'+
 	ja.join('')
 	+'</select>';
-	hobs.innerHTML=cane;
+	//hobs.innerHTML=cane;
 
 	let bane=
 
@@ -1013,7 +883,7 @@ function sro(xxx){//построение вероятных длин ключа
 	'style="width:90px;border:1px solid cyan;border-radius:4px">'+
 	ja.join('')
 	+'</select>';
-	xeon.innerHTML=bane;
+	//xeon.innerHTML=bane;
 	}//sro()
 //*************************
 
