@@ -380,7 +380,6 @@ function movey(x){
 	}
 function movez(){
 	cury.forEach((xx,i)=>{
-	console.log(document.querySelector(`#piv${i} + *`).innerText);
 	document.querySelector(`#piv${i} + *`).innerText=
 		upup(ac[(ac.length+xx-blind)%ac.length]);});
 	evin()
