@@ -66,7 +66,7 @@ textarea{margin:0 auto;padding:2px 12px;width:100%;max-width:1600px;
 #zet, #zet label {user-select: none;}
 #zet label {padding:0 4px;display: inline-block;}
 #zet label span {font-size: 28px;}
-#cccp2{margin:1px auto;width:100%;max-width:1600px;}
+#ccp{margin:1px auto;width:100%;max-width:1600px;}
 #ja00 {user-select: none}
 #ja02 label{display:flex;justify-content:center;
 	width:100%;height:100%;}
@@ -256,7 +256,7 @@ edit1.value=bral[ceti].cif;
 let curx,cury,asse,ac;
 /************************************/
 const kill=[
-	'indigo','black','green',
+	'violet','black','green',
 	'teal','fuchsia','lime',
 	'olive','blue','red',
 	'fuchsia','navy','black',
@@ -385,10 +385,11 @@ function movez(){
 	evin()
 	}
 function plot(y){
-	const kof=110/Math.max.apply(null, y);
-	const koe=3/Math.max.apply(null, y);
+	let j=Math.max.apply(null, y);
+	const kof=110/j;
+	const koe=3/j;
 	const v=15;
-	let xass7=y.map((x,i)=>{return {n:x,
+	let p=y.map((x,i)=>{return {n:x,
 		w:v%2+v*i-3,h:(asse[i]*kof)|0,
 		s:`${15/(asse.length+1)*i} ${asse[i]*koe}`,
 		d:`${(15/(asse.length+0)*(i+1)-(15/(asse.length+0))/2).toFixed(2)} ${(asse[i]*koe).toFixed(2)} ${(15/(asse.length+0)*(i+1)+0).toFixed(2)} 0`,
@@ -400,7 +401,7 @@ function plot(y){
 		fx2:`${15/(y.length+0)*(i+1)+0}`,
 		fy2:`4`,
 		}});
-	return xass7;
+	return p;
 }//)(plot);
 function pars1e(bom){//головоломные вычисления алфвита
 	nalf=bom;
@@ -420,6 +421,7 @@ function pars2e(x){//гребенки юзерские
 		}});
 	// гребенки юзерские
 	ara=a.map(x=>plot(x));
+	//console.table(ara);
 }
 let rega=[];
 function newgame(x,y){//x==='ß'
@@ -457,6 +459,7 @@ function redk(x){//сбор гребенки из зубцов
 		n.push((+x[i].fx2).toFixed(3));//
 		n.push((+x[(i+cury[curx])%x.length].fy2).toFixed(3));//
 		}
+	if(n.some(isNaN))n=[0,4,0,2.5,15,2.5,15,4];//и дает пустышку
 	n=n.join(' ');
 	return n;
 }
