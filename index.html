@@ -172,7 +172,7 @@ main{padding:2px 0px 22px}
 <label><input type="checkbox" id="larv" name="bln" onchange="this.blur();blind=!blind;movez()"></label>
 </div>
 <div id="ja03" style="background: yellow;" onclick="newgame(keylen,nalf);geon=edit1.value">run</div>
-<div id="ja04" style="background: #ffc107;" onclick="edit1.value=geon;newgame(keylen,nalf)">reset</div>
+<div id="ja04" style="background: #ffc107;" onclick="if(geon){edit1.value=geon;newgame(keylen,nalf)}">reset</div>
 <div id="ja05" style="background: yellow;" onclick="
 	navigator.clipboard.readText()
 		.then(fb => {
@@ -253,6 +253,7 @@ let ceti=1;//задание
 let keylen=bral[ceti].n;//3;
 let nalf=bral[ceti].bom;//№ алфы
 edit1.value=bral[ceti].cif;
+//geon=edit1.value;
 let curx,cury,asse,ac;
 /************************************/
 const kill=[
@@ -447,6 +448,7 @@ function newgame(x,y){//x==='ß'
 	movez();
 	}//end newgame
 newgame(keylen,nalf);
+geon=edit1.value;
 function upup(x){///мега апперкейс() одногосимвола
 	if (x==='ß') return 'ẞ';//
 	return x.toUpperCase();
