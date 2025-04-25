@@ -125,34 +125,6 @@ grid-template-rows:1fr 1fr 1fr 1fr 1fr;height:200px;}
 #ja09{grid-area:5/3/6/6}
 main{padding:2px 0px 22px}
 }
-/***************/
-#nok {
-	padding: 15px 25px; 
-	display: flex; 
-	justify-content: center; 
-	flex-wrap: wrap; 
-	background: #abba; 
-	border: 2px solid blue; 
-	border-radius: 5px;
-	}
-#nok label {
-	margin: 1px; 
-	padding: 3px; 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
-	border-radius: 3px;
-	background: white;
-	cursor: pointer;
-	font-size:32px;
-	user-select: none;
-	}
-#nok * input {
-	display: none;
-	}	
-#nok label:has(input:checked) {
-	background: linear-gradient(65deg,  white 46%, maroon 50%, white 54%);
-	}	
   </style>
 </head>
 <body>
@@ -183,16 +155,14 @@ main{padding:2px 0px 22px}
 <polygon id="poul" points="0 0  0.23 1.40 0.45 0 0.68 0.47 0.91 0 1.14 0.93 1.36 0 1.59 0.27 1.82 0 2.05 0.60 2.27 0 2.50 2.27 2.73 0 2.95 0.27 3.18 0 3.41 0.80 3.64 0 3.86 1.40 4.09 0 4.32 0.73 4.55 0 4.77 0.73 5.00 0 5.23 0.80 5.45 0 5.68 1.07 5.91 0 6.14 2.33 6.36 0 6.59 2.53 6.82 0 7.05 0.53 7.27 0 7.50 0.80 7.73 0 7.95 1.20 8.18 0 8.41 1.27 8.64 0 8.86 0.53 9.09 0 9.32 0.13 9.55 0 9.77 0.33 10.00 0 10.23 0.07 10.45 0 10.68 0.27 10.91 0 11.14 0.20 11.36 0 11.59 0.13 11.82 0 12.05 0.00 12.27 0 12.50 0.87 12.73 0 12.95 0.20 13.18 0 13.41 0.00 13.64 0 13.86 0.00 14.09 0 14.32 0.73 14.55 0 14.77 3.00 15.00 0" stroke="maroon" opacity="0.5" stroke-width="0.06" fill="purple"></polygon>
 </svg>
 </div>
-<form id="nok"></form>
 <div id="menu">
 <div id="ja00" style="background: cyan;">ZZZZZ</div>
 <div id="ja01" style="background: lime;">
 <select id="bel" onchange="this.blur();newgame(keylen,this.value)">
 			<option value="0">русс_</option>
 			<option value="1">русс_без Ё</option>
-			<option value="3">русс_ без ЁЪ</option>
 			<option value="4">русс без _</option>
-			<option value="5">русс без _Ё</option>
+			<option value="3">русс_ без ЁЪ</option>
 			<option value="8">англ</option>
 			<option value="9">англ_</option>
 			<option value="10">немец</option>
@@ -281,10 +251,10 @@ let bral=[
 /*******************************/
 let ceti=1;//задание
 let keylen=bral[ceti].n;//3;
-//let nalf=bral[ceti].bom;//№ алфы
+let nalf=bral[ceti].bom;//№ алфы
 edit1.value=bral[ceti].cif;
 //geon=edit1.value;
-let curx,cury,asse,ac,asseo,aco;
+let curx,cury,asse,ac;
 /************************************/
 const kill=[
 	'violet','black','green',
@@ -361,13 +331,6 @@ fq:[21,7 ,14,4 ,9 ,34,0 ,4 ,12,21,11,11,12,16,35,38,8 ,12,
 			18,19,8 ,2 ,5 ,1 ,4 ,3 ,2 ,0 ,13,3 /*,0 ,0 ,11,45*/],
 },
 ];//
-affa[100]={//  алфавит 100
-buk:"абвгдеёжзийклмнопрстуфхцчшщъыьэюя_",//ru0=;//
-//  А  Б  В  Г  Д  Е  Ё  Ж  З  И  Й  К  Л  М  Н  О  П  Р
-fq:[21,7 ,14,4 ,9 ,34,0 ,4 ,12,21,11,11,12,16,35,38,8 ,12,
-		//  С  Т  У  Ф  Х  Ц  Ч  Ш  Щ  Ъ  Ы  Ь  Э  Ю  Я  _
-			18,19,8 ,2 ,5 ,1 ,4 ,3 ,2 ,0 ,13,3 ,0 ,0 ,11,45],				
-};
 let evva,ara,txt;//
 let geon='';
 let blind=0;
@@ -420,30 +383,21 @@ function movez(){
 		upup(ac[(ac.length+xx-blind)%ac.length]);});
 	evin()
 	}
-const f=x=>x.toFixed(2).replace(/\.00|0$/,'');// великий округлитель	
 function plot(y){
 	let j=Math.max.apply(null, y);
 	const kof=110/j;
 	const koe=3/j;
 	const v=15;
-	let yh=y.length;//длина массива один
-	let ah=asse.length;// длина массива два
-	let p=y.map((x,i)=>{return {
-		n:x,
-		w:v%2+v*i-3,
-		h:(asse[i]*kof)|0,
-		s:`${f(v/(ah+1)*i)}`+
-		` ${f(asse[i]*koe)}`,
-		d:`${f(v/ah*(i+1)-(v/ah)/2)}`+
-		` ${f(asse[i]*koe)}`+
-		` ${f(v/ah*(i+1))} 0`,
+	let p=y.map((x,i)=>{return {n:x,
+		w:v%2+v*i-3,h:(asse[i]*kof)|0,
+		s:`${15/(asse.length+1)*i} ${asse[i]*koe}`,
+		d:`${(15/(asse.length+0)*(i+1)-(15/(asse.length+0))/2).toFixed(2)} ${(asse[i]*koe).toFixed(2)} ${(15/(asse.length+0)*(i+1)+0).toFixed(2)} 0`,
 		e:
-		`${f(v/yh*(i+1)-(v/yh)/2)}`+
-		` ${f(4-y[i]*koe)}`+
-		` ${f(v/yh*(i+1))} 4`,
-		fx:`${f(v/yh*(i+1)-(v/yh)/2)}`,
-		fy:`${f(4-y[i]*koe)}`,
-		fx2:`${f(v/yh*(i+1))}`,
+		`${15/(y.length+0)*(i+1)-(15/(y.length+0))/2} ${4-y[i]*koe}`+
+		` ${15/(y.length+0)*(i+1)+0} 4`,
+		fx:`${15/(y.length+0)*(i+1)-(15/(y.length+0))/2}`,
+		fy:`${4-y[i]*koe}`,
+		fx2:`${15/(y.length+0)*(i+1)+0}`,
 		fy2:`4`,
 		}});
 	return p;
@@ -454,18 +408,18 @@ function pars1e(bom){//головоломные вычисления алфви�
 	ac=affa[nalf].buk;//'абвгдежзийклмнопрстуфхцчшщъыьэюя_';//
 	}
 function pars2e(x){//гребенки юзерские
-	let a=Array(keylen).fill().map(c=>Array(ac.length).fill(0));//правильно
+	let a=Array(keylen).fill().map(x=>Array(ac.length).fill(0));//правильно
 	let isp='';
 	let m=0;
 	x=x.toLowerCase()
-	.split('').forEach(c=>{
-		if(ac.indexOf(c)>-1){
-			if(isp.indexOf(c)<0){isp+=c;}
-			a[m%keylen][ac.indexOf(c)]++;
+	.split('').forEach(x=>{
+		if(ac.indexOf(x)>-1){
+			if(isp.indexOf(x)<0){isp+=x;}
+			a[m%keylen][ac.indexOf(x)]++;
 			m++;
 		}});
 	// гребенки юзерские
-	ara=a.map(c=>plot(c));
+	ara=a.map(x=>plot(x));
 	//console.table(ara);
 }
 let rega=[];
@@ -490,27 +444,9 @@ function newgame(x,y){//x==='ß'
 	ja00.innerText=//
 		cury.reduce((a,b)=>a+=ac[(2*ac.length-b-blind)%ac.length],'');
 	movez();
-	bel.value=nalf;//alert(nalf);
-	if(nalf<100){
-		aco=new String(ac);
-		asseo=asse.map(c=>c);//new Array(asse);
-		nok.innerHTML=[...ac]
-		.map(c=>'<label><input type="checkbox" name="x"'+
-			' onchange="vist()"> <span>'+
-			upup(c)+'</span></label>').join('');}
 	}//end newgame
-newgame(keylen,bral[ceti].bom);//
+newgame(keylen,nalf);
 geon=edit1.value;
-function vist(){
-	let t=[...nok.querySelectorAll('label')];
-	let p=t.map((c,i)=>c.querySelector('input')
-	.checked?'':{x:aco[i],y:asseo[i]}).filter(c=>c);
-	let p1=p.map(c=>c.x);
-	let p2=p.map(c=>c.y);
-	affa[100].buk=p1.join('');
-	affa[100].fq=p2;
-	newgame(keylen,100);
-	}
 function upup(x){///мега апперкейс() одногосимвола
 	if (x==='ß') return 'ẞ';//
 	return x.toUpperCase();
@@ -668,7 +604,6 @@ function sro(x){//построение вероятных длин ключа
 	+'</select>\n';
 	ja09.innerHTML=bane;
 	}//sro()
-//*************************
 </script>
 </body>
 </html>
