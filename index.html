@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- from 10 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,28 +7,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
-  <title>Шифр Виженера 16</title>
+  <title>Шифр Виженера 17</title>
   <style>
-  *:not(hr), *::after, *::before {
-  font-family:monospace;
-  box-sizing: border-box; margin:0; padding:0; border:0}
-  ul {list-style-type: none}
-#i {margin:auto;padding: 33px 0;
+*:not(hr), *::after, *::before {
+	font-family:monospace;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin:0;
+	padding:0;
+	border:0
+	}
+ul {list-style-type: none}
+#i {
+	margin:auto;
+	padding: 33px 0;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(blue));
+	background: -o-linear-gradient(rgba(0,0,0,0.9), blue);
 	background: linear-gradient(rgba(0,0,0,0.9), blue);
 	text-align: center;
 	}
-body{color:black; background-color:white}
-main {margin:0 auto; padding:2px 10px 22px;width:100%;max-width:1600px;
-	background-color:#def; position:relative;
+body{
+	color:black;
+	text-align: center;
+	background-color:white
 	}
-#ver {position:absolute;bottom:0;right:7px;font-size: 15px;}
-#eddy{position: relative;}
-textarea{margin:0 auto;padding:2px 12px;width:100%;max-width:1600px;
+main {
+	margin: 0 auto;
+	padding: 2px 10px 22px;
+	width:100%;
+	max-width:1600px;
+	text-align:left;
+	background-color:#def; 
+	position:relative;
+	}
+#ver {
+	position:absolute;
+	bottom:0;
+	right:7px;
+	font-size: 15px;
+	}
+#eddy{position: relative}
+textarea{
+	margin: 0 auto;
+	padding: 2px 12px;
+	width:100%;
+	max-width:1600px;
 	font-size: 16px;
 	border: 2px solid maroon;
 	resize: none;
 	white-space: normal;
-	text-overflow: clip;
+	-o-text-overflow: clip;
+	   text-overflow: clip;
 	overflow: visible;
 	word-wrap: normal;
 	word-break: break-all;
@@ -41,9 +71,15 @@ textarea{margin:0 auto;padding:2px 12px;width:100%;max-width:1600px;
 	}
 #edit2{color: red}
 #edit3{color: white}
-#bat label {background: cyan;}
-#bat input {display: block; display: none;}
-#zet label:has(input:checked){background: gold;text-decoration:underline;}
+#bat label {background: cyan}
+#bat input {
+	display: block;
+	display: none
+	}
+#zet label:has(input:checked){
+	background: gold;
+	text-decoration:underline;
+	}
 [id^='eka']{display: none}
 #zet:has(#piv0:checked) ~svg #eka0{display: block}
 #zet:has(#piv1:checked) ~svg #eka1{display: block}
@@ -62,102 +98,321 @@ textarea{margin:0 auto;padding:2px 12px;width:100%;max-width:1600px;
 #zet:has(#piv14:checked) ~svg #eka14{display: block}
 #zet:has(#piv15:checked) ~svg #eka15{display: block}
 .m_2:checked ~svg #eva2{display: block}
-#zet{padding:0 1%}
-#zet, #zet label {user-select: none;}
-#zet label {padding:0 4px;display: inline-block;}
-#zet label span {font-size: 28px;}
-#ccp{margin:1px auto;width:100%;max-width:1600px;}
-#ja00 {user-select: none}
-#ja02 label{display:flex;justify-content:center;
-	width:100%;height:100%;}
-#ja03 {user-select: none}
-#ja04 {user-select: none}
-#ja05 {user-select: none}
-#ja06 {user-select: none}
-#ja07 {user-select: none}
+#zet{padding: 0 1%}
+#zet, #zet label {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+#zet label {
+	padding:0 4px;
+	display: inline-block
+	}
+#zet label span {font-size: 28px}
+#ccp {
+	margin: 1px auto;
+	width:100%;
+	max-width:1600px
+	}
+#ja00 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja02 label{
+	width:100%;
+	height:100%;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	}
+#ja03 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja04 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja05 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja06 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja07 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
 /***/
-#menu{display: grid}
-#menu div {margin:3px;display:grid;
-	place-items:center;text-transform: uppercase;}
-#menu select{width:94%;border:1px solid cyan;border-radius:4px}
+#menu{display: -ms-grid;display: grid}
+#menu div {
+	margin:3px;
+	display: -ms-grid;
+	display: grid;
+	place-items: center;
+	text-transform: uppercase;
+	}
+#menu select{
+	width:94%;
+	border: 1px solid cyan;
+	border-radius:4px
+	}
 @media screen and (max-width: 3200px) {
 #menu {
+-ms-grid-columns: 2fr 2fr 24px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 grid-template-columns: 2fr 2fr 24px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+-ms-grid-rows:1fr;
 grid-template-rows:1fr;width:100%;height:46px;
 }
-#ja00{grid-area:1/1/2/2}
-#ja01{grid-area:1/2/2/3}
-#ja02{grid-area:1/3/2/4}
-#ja03{grid-area:1/4/2/5}
-#ja04{grid-area:1/5/2/6}
-#ja05{grid-area:1/6/2/7}
-#ja06{grid-area:1/7/2/8}
-#ja07{grid-area:1/8/2/9}
-#ja08{grid-area:1/9/2/10}
-#ja09{grid-area:1/10/2/11}
+#menu > *:nth-child(1) {
+		-ms-grid-row:1;
+		-ms-grid-column:1;
+}
+#menu > *:nth-child(2) {
+		-ms-grid-row:1;
+		-ms-grid-column:2;
+}
+#menu > *:nth-child(3) {
+		-ms-grid-row:1;
+		-ms-grid-column:3;
+}
+#menu > *:nth-child(4) {
+		-ms-grid-row:1;
+		-ms-grid-column:4;
+}
+#menu > *:nth-child(5) {
+		-ms-grid-row:1;
+		-ms-grid-column:5;
+}
+#menu > *:nth-child(6) {
+		-ms-grid-row:1;
+		-ms-grid-column:6;
+}
+#menu > *:nth-child(7) {
+		-ms-grid-row:1;
+		-ms-grid-column:7;
+}
+#menu > *:nth-child(8) {
+		-ms-grid-row:1;
+		-ms-grid-column:8;
+}
+#menu > *:nth-child(9) {
+		-ms-grid-row:1;
+		-ms-grid-column:9;
+}
+#menu > *:nth-child(10) {
+		-ms-grid-row:1;
+		-ms-grid-column:10;
+}
+#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:1/1/2/2}
+#ja01{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:1;grid-area:1/2/2/3}
+#ja02{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:1;grid-area:1/3/2/4}
+#ja03{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:1;grid-area:1/4/2/5}
+#ja04{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:1;grid-area:1/5/2/6}
+#ja05{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:6;-ms-grid-column-span:1;grid-area:1/6/2/7}
+#ja06{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:7;-ms-grid-column-span:1;grid-area:1/7/2/8}
+#ja07{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:8;-ms-grid-column-span:1;grid-area:1/8/2/9}
+#ja08{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:9;-ms-grid-column-span:1;grid-area:1/9/2/10}
+#ja09{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:10;-ms-grid-column-span:1;grid-area:1/10/2/11}
 }
 @media screen and (max-width: 1080px) {
-#menu {grid-template-columns: 2fr 1fr 1fr 2fr 1fr 1fr;
+#menu {-ms-grid-columns: 2fr 1fr 1fr 2fr 1fr 1fr;grid-template-columns: 2fr 1fr 1fr 2fr 1fr 1fr;
+-ms-grid-rows:1fr 1fr 1fr;
 grid-template-rows:1fr 1fr 1fr;height:170px;}
-#ja00{grid-area:1/1/2/4}
-#ja01{grid-area:1/4/2/6}
-#ja02{grid-area:1/6/2/7}
-#ja03{grid-area:2/1/3/2}
-#ja04{grid-area:2/2/3/4}
-#ja05{grid-area:2/4/3/5}
-#ja06{grid-area:3/1/4/3;order:2}
-#ja07{grid-area:3/3/4/5;order:3}
-#ja08{grid-area:2/5/3/7;order:1}
-#ja09{grid-area:3/5/4/7}
+#menu > *:nth-child(1) {
+		-ms-grid-row:1;
+		-ms-grid-column:1;}
+#menu > *:nth-child(2) {
+		-ms-grid-row:1;
+		-ms-grid-column:2;}
+#menu > *:nth-child(3) {
+		-ms-grid-row:1;
+		-ms-grid-column:3;}
+#menu > *:nth-child(4) {
+		-ms-grid-row:1;
+		-ms-grid-column:4;}
+#menu > *:nth-child(5) {
+		-ms-grid-row:1;
+		-ms-grid-column:5;}
+#menu > *:nth-child(6) {
+		-ms-grid-row:1;
+		-ms-grid-column:6;}
+#menu > *:nth-child(7) {
+		-ms-grid-row:2;
+		-ms-grid-column:1;}
+#menu > *:nth-child(8) {
+		-ms-grid-row:2;
+		-ms-grid-column:2;}
+#menu > *:nth-child(9) {
+		-ms-grid-row:2;
+		-ms-grid-column:3;}
+#menu > *:nth-child(10) {
+		-ms-grid-row:2;
+		-ms-grid-column:4;}
+#menu > *:nth-child(11) {
+		-ms-grid-row:2;
+		-ms-grid-column:5;}
+#menu > *:nth-child(12) {
+		-ms-grid-row:2;
+		-ms-grid-column:6;}
+#menu > *:nth-child(13) {
+		-ms-grid-row:3;
+		-ms-grid-column:1;}
+#menu > *:nth-child(14) {
+		-ms-grid-row:3;
+		-ms-grid-column:2;}
+#menu > *:nth-child(15) {
+		-ms-grid-row:3;
+		-ms-grid-column:3;}
+#menu > *:nth-child(16) {
+		-ms-grid-row:3;
+		-ms-grid-column:4;}
+#menu > *:nth-child(17) {
+		-ms-grid-row:3;
+		-ms-grid-column:5;}
+#menu > *:nth-child(18) {
+		-ms-grid-row:3;
+		-ms-grid-column:6;}
+#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:3;grid-area:1/1/2/4}
+#ja01{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:2;grid-area:1/4/2/6}
+#ja02{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:6;-ms-grid-column-span:1;grid-area:1/6/2/7}
+#ja03{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:2/1/3/2}
+#ja04{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:2;grid-area:2/2/3/4}
+#ja05{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:1;grid-area:2/4/3/5}
+#ja06{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:3/1/4/3;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}
+#ja07{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:2;grid-area:3/3/4/5;-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3}
+#ja08{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:2;grid-area:2/5/3/7;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
+#ja09{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:2;grid-area:3/5/4/7}
 }
 @media screen and (max-width: 320px) {
-#menu {grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+#menu {-ms-grid-columns: 2fr 1fr 1fr 1fr 1fr;grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+-ms-grid-rows:1fr 1fr 1fr 1fr 1fr;
 grid-template-rows:1fr 1fr 1fr 1fr 1fr;height:200px;}
-#ja00{grid-area:1/1/2/6;order:2}
-#ja01{grid-area:2/1/3/5;order:1}
-#ja02{grid-area:2/5/3/6}
-#ja03{grid-area:3/1/4/2}
-#ja04{grid-area:3/2/4/4}
-#ja05{grid-area:3/4/4/6}
-#ja06{grid-area:4/1/5/3}
-#ja07{grid-area:4/3/5/6}
-#ja08{grid-area:5/1/6/3}
-#ja09{grid-area:5/3/6/6}
+#menu > *:nth-child(1) {
+		-ms-grid-row:1;
+		-ms-grid-column:1;}
+#menu > *:nth-child(2) {
+		-ms-grid-row:1;
+		-ms-grid-column:2;}
+#menu > *:nth-child(3) {
+		-ms-grid-row:1;
+		-ms-grid-column:3;}
+#menu > *:nth-child(4) {
+		-ms-grid-row:1;
+		-ms-grid-column:4;}
+#menu > *:nth-child(5) {
+		-ms-grid-row:1;
+		-ms-grid-column:5;}
+#menu > *:nth-child(6) {
+		-ms-grid-row:2;
+		-ms-grid-column:1;}
+#menu > *:nth-child(7) {
+		-ms-grid-row:2;
+		-ms-grid-column:2;}
+#menu > *:nth-child(8) {
+		-ms-grid-row:2;
+		-ms-grid-column:3;}
+#menu > *:nth-child(9) {
+		-ms-grid-row:2;
+		-ms-grid-column:4;}
+#menu > *:nth-child(10) {
+		-ms-grid-row:2;
+		-ms-grid-column:5;}
+#menu > *:nth-child(11) {
+		-ms-grid-row:3;
+		-ms-grid-column:1;}
+#menu > *:nth-child(12) {
+		-ms-grid-row:3;
+		-ms-grid-column:2;}
+#menu > *:nth-child(13) {
+		-ms-grid-row:3;
+		-ms-grid-column:3;}
+#menu > *:nth-child(14) {
+		-ms-grid-row:3;
+		-ms-grid-column:4;}
+#menu > *:nth-child(15) {
+		-ms-grid-row:3;
+		-ms-grid-column:5;}
+#menu > *:nth-child(16) {
+		-ms-grid-row:4;
+		-ms-grid-column:1;}
+#menu > *:nth-child(17) {
+		-ms-grid-row:4;
+		-ms-grid-column:2;}
+#menu > *:nth-child(18) {
+		-ms-grid-row:4;
+		-ms-grid-column:3;}
+#menu > *:nth-child(19) {
+		-ms-grid-row:4;
+		-ms-grid-column:4;}
+#menu > *:nth-child(20) {
+		-ms-grid-row:4;
+		-ms-grid-column:5;}
+#menu > *:nth-child(21) {
+		-ms-grid-row:5;
+		-ms-grid-column:1;}
+#menu > *:nth-child(22) {
+		-ms-grid-row:5;
+		-ms-grid-column:2;}
+#menu > *:nth-child(23) {
+		-ms-grid-row:5;
+		-ms-grid-column:3;}
+#menu > *:nth-child(24) {
+		-ms-grid-row:5;
+		-ms-grid-column:4;}
+#menu > *:nth-child(25) {
+		-ms-grid-row:5;
+		-ms-grid-column:5;}
+#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:5;grid-area:1/1/2/6;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}
+#ja01{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:4;grid-area:2/1/3/5;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
+#ja02{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:1;grid-area:2/5/3/6}
+#ja03{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:3/1/4/2}
+#ja04{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:2;grid-area:3/2/4/4}
+#ja05{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:2;grid-area:3/4/4/6}
+#ja06{-ms-grid-row:4;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:4/1/5/3}
+#ja07{-ms-grid-row:4;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:3;grid-area:4/3/5/6}
+#ja08{-ms-grid-row:5;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:5/1/6/3}
+#ja09{-ms-grid-row:5;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:3;grid-area:5/3/6/6}
 main{padding:2px 0px 22px}
 }
+[id^='ja'] {
+	border: 2px solid gray;
+	background:-webkit-gradient(linear, left top, left bottom, from(#e5eeeb), to(#83b0c4));
+	background:-o-linear-gradient(#e5eeeb, #83b0c4);
+	background:linear-gradient(#e5eeeb, #83b0c4)
+	}
 /***************/
 #nok {
 	padding: 15px 25px; 
+	display: -webkit-box; 
+	display: -ms-flexbox; 
 	display: flex; 
-	justify-content: center; 
-	flex-wrap: wrap; 
+	-webkit-box-pack: center; 
+	    -ms-flex-pack: center; 
+	        justify-content: center; 
+	-ms-flex-wrap: wrap; 
+	    flex-wrap: wrap; 
 	background: #abba; 
 	border: 2px solid blue; 
 	border-radius: 5px;
 	}
 #nok label {
-	margin: 1px; 
-	padding: 3px; 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
+	padding: 3px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	border-radius: 3px;
 	background: white;
 	cursor: pointer;
-	font-size:32px;
-	user-select: none;
+	font-size: 32px;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	}
 #nok * input {
 	display: none;
-	}	
+	}
 #nok label:has(input:checked) {
+	background: -o-linear-gradient(25deg,  white 46%, maroon 50%, white 54%);
 	background: linear-gradient(65deg,  white 46%, maroon 50%, white 54%);
-	}	
+	}
+.mm {position:absolute; margin: 0}
+.pp {visibility:hidden; margin: 1px}
   </style>
 </head>
 <body>
 <main>
-<div id="ver">v16</div>
+<div id="ver">v17</div>
 <div id="eddy">
 	<textarea id="edit1" rows="10" cols="45"></textarea>
 	<textarea id="edit2" rows="10" cols="45"></textarea>
@@ -185,8 +440,8 @@ main{padding:2px 0px 22px}
 </div>
 <form id="nok"></form>
 <div id="menu">
-<div id="ja00" style="background: cyan;">ZZZZZ</div>
-<div id="ja01" style="background: lime;">
+<div id="ja00">ZZZZZ</div>
+<div id="ja01">
 <select id="bel" onchange="this.blur();newgame(keylen,this.value)">
 			<option value="0">русс_</option>
 			<option value="1">русс_без Ё</option>
@@ -198,12 +453,16 @@ main{padding:2px 0px 22px}
 			<option value="10">немец</option>
 		</select>
 </div>
-<div id="ja02" style="background: #974323;">
-<label><input type="checkbox" id="larv" name="bln" onchange="this.blur();blind=!blind;movez()"></label>
+<div id="ja02">
+<label><input type="checkbox" id="larv" name="bln" onchange="
+	this.blur();
+	blind=!blind;
+	movez()">
+</label>
 </div>
-<div id="ja03" style="background: yellow;" onclick="newgame(keylen,nalf);geon=edit1.value">run</div>
-<div id="ja04" style="background: #ffc107;" onclick="if(geon){edit1.value=geon;newgame(keylen,nalf)}">reset</div>
-<div id="ja05" style="background: yellow;" onclick="
+<div id="ja03" onclick="newgame(keylen,nalf);geon=edit1.value">run</div>
+<div id="ja04" onclick="if(geon){edit1.value=geon;newgame(keylen,nalf)}">reset</div>
+<div id="ja05" onclick="
 	navigator.clipboard.readText()
 		.then(fb => {
 		geon='';
@@ -213,9 +472,9 @@ main{padding:2px 0px 22px}
 		.catch(err => {
 		console.log('Oblomingo flyed pass', err);
 		})">paste</div>
-<div id="ja06" style="background: yellow;" onclick="cury.unshift(cury.pop());movez()">←</div>
-<div id="ja07" style="background: yellow;" onclick="cury.push(cury.shift());movez()">→</div>
-<div id="ja08" style="background: tomato;">
+<div id="ja06" style="font-family:sans-serif" onclick="cury.unshift(cury.pop());movez()">←</div>
+<div id="ja07" style="font-family:sans-serif" onclick="cury.push(cury.shift());movez()">→</div>
+<div id="ja08">
 	<select id="lik" onchange="this.blur();geon='';wax(this.value)">
 		  <option value="1">П 1</option>
 		  <option value="2">П 2</option>
@@ -226,7 +485,7 @@ main{padding:2px 0px 22px}
 		  <option value="7">П 7</option>
 		</select>
 </div>
-<div id="ja09" style="background: cyan;">
+<div id="ja09">
 	<select id="uran">
 	<option value="13" selected> 13 (0.099)</option>
 	<option value="5"> 5 (0.044)</option>
@@ -247,10 +506,11 @@ main{padding:2px 0px 22px}
 </div>
 </div>
 </main>
-<script> 
+<a href="https://allcalc.ru/node/1977">1011001</a>
+<script>// style="margin:auto;"
 let bral=[
 {},
-{n:3,bom:1,cif://1  1
+{n:3,bom:0,cif://1  1
 `уН_срраряХЦБНИЗйРСЩНЯОЦЯБЗАСРФЖУТАКСЛЦЯЖЯЯПФСТЯЧУНСЛЗЩОИИ ЙЪЧМГЯЬФСРШ_СВФБФСГЗАППЯБХЪЙЗ_ЕРЯАРЩАХЪЦЗОХЬЧЛЪЪГХ_ЖЗВЗИГЙНСЕИЯОВЖАЧБЙХЗЙЧЪБУНОЦСГИШОЦЧАТТЛЗФАКМШРВМРГЖУНОЦЫАЪЧЦХЪЛНСУИЬАРС ГЗ_ВУТТЪЪАЩФ_ПЪАЩЬБПТОХ_ЖЗЙЖХЯПХ_НЗЯБЗАЖШФЬССГПХМЖЦАТТЗНГТЖСП
 `},
 {n:6,bom:4,cif://2  4
@@ -281,13 +541,11 @@ let bral=[
 /*******************************/
 let ceti=1;//задание
 let keylen=bral[ceti].n;//3;
-//let nalf=bral[ceti].bom;//№ алфы
 edit1.value=bral[ceti].cif;
-//geon=edit1.value;
 let curx,cury,asse,ac,asseo,aco;
 /************************************/
 const kill=[
-	'violet','black','green',
+	'violet','tomato','green',
 	'teal','fuchsia','lime',
 	'olive','blue','red',
 	'fuchsia','navy','black',
@@ -371,6 +629,40 @@ fq:[21,7 ,14,4 ,9 ,34,0 ,4 ,12,21,11,11,12,16,35,38,8 ,12,
 let evva,ara,txt;//
 let geon='';
 let blind=0;
+//***********************
+function dragElement(moa) {//Make the DIV element draggagle:
+	var pos1x = 0, pos1y = 0, pos3x = 0, pos3y = 0;
+	moa.onmousedown = dragMouseDown;
+	
+	function dragMouseDown(e) {
+		e = e || window.event;
+		e.preventDefault();
+		// get the mouse cursor position at startup:
+		pos3x = e.clientX;
+		pos3y = e.clientY;
+		document.onmouseup = closeDragElement;
+		// call a function whenever the cursor moves:
+		document.onmousemove = elementDrag;
+		}
+	function elementDrag(e) {
+		e = e || window.event;
+		e.preventDefault();
+		// calculate the new cursor position:
+		pos1x = pos3x - e.clientX;
+		pos1y = pos3y - e.clientY;
+		pos3x = e.clientX;
+		pos3y = e.clientY;
+		moa.style.left = (moa.offsetLeft - pos1x) + "px";
+		moa.style.top = (moa.offsetTop - pos1y) + "px";
+		}
+	function closeDragElement() {
+		/* stop moving when mouse button is released:*/
+		document.onmouseup = null;
+		document.onmousemove = null;
+		}
+}
+//***********
+//***********
 function wax(x){//оброботчик выбора примера
 	switch (x){
 		case '1':
@@ -466,7 +758,6 @@ function pars2e(x){//гребенки юзерские
 		}});
 	// гребенки юзерские
 	ara=a.map(c=>plot(c));
-	//console.table(ara);
 }
 let rega=[];
 function newgame(x,y){//x==='ß'
@@ -494,15 +785,34 @@ function newgame(x,y){//x==='ß'
 	if(nalf<100){
 		aco=new String(ac);
 		asseo=asse.map(c=>c);//new Array(asse);
-		nok.innerHTML=[...ac]
-		.map(c=>'<label><input type="checkbox" name="x"'+
-			' onchange="vist()"> <span>'+
-			upup(c)+'</span></label>').join('');}
+		nok.innerHTML=
+		[...ac]
+		.map(c=>'<label class="pp"><span>v</span></label>').join('')+		
+		[...ac]
+		.map(c=>'<label class="mm"><input type="checkbox" name="xi"'+
+			' onchange="vist()"><span>'+
+			upup(c)+'</span></label>').join('');
+		let a=[...document.querySelectorAll('.mm')];
+		let p=[...document.querySelectorAll('.pp')];
+		a.forEach((c,i)=>{
+		c.style.left=p[i].offsetLeft+'px';
+		c.style.top=p[i].offsetTop+'px';		
+		});
+		a.forEach(c=>{dragElement(c)});	
+		a.forEach(c=>{c.addEventListener('touchmove',
+			(e)=>{
+				let i=e.targetTouches[0];
+				c.style.left=`${i.pageX}px`;
+				c.style.top=`${i.pageY}px`;
+				e.preventDefault();
+			},
+			false)});
+		}//(if)
 	}//end newgame
 newgame(keylen,bral[ceti].bom);//
 geon=edit1.value;
 function vist(){
-	let t=[...nok.querySelectorAll('label')];
+	let t=[...nok.querySelectorAll('.mm')];
 	let p=t.map((c,i)=>c.querySelector('input')
 	.checked?'':{x:aco[i],y:asseo[i]}).filter(c=>c);
 	let p1=p.map(c=>c.x);
