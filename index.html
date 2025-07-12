@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- from 10 -->
+<!-- from 11 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
-  <title>Шифр Виженера 17</title>
+  <title>Шифр Виженера 18</title>
   <style>
 *:not(hr), *::after, *::before {
 	font-family:monospace;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	margin:0;
 	padding:0;
 	border:0
@@ -21,8 +20,6 @@ ul {list-style-type: none}
 #i {
 	margin:auto;
 	padding: 33px 0;
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(blue));
-	background: -o-linear-gradient(rgba(0,0,0,0.9), blue);
 	background: linear-gradient(rgba(0,0,0,0.9), blue);
 	text-align: center;
 	}
@@ -56,13 +53,12 @@ textarea{
 	border: 2px solid maroon;
 	resize: none;
 	white-space: normal;
-	-o-text-overflow: clip;
-	   text-overflow: clip;
+	text-overflow: clip;
 	overflow: visible;
 	word-wrap: normal;
 	word-break: break-all;
 	}
-#edit2,#edit3{
+#edit2,#edit3,#edit4{
 	display:none;
 	position: absolute;
 	left: 0;
@@ -71,6 +67,7 @@ textarea{
 	}
 #edit2{color: red}
 #edit3{color: white}
+#edit4{color: blue}
 #bat label {background: cyan}
 #bat input {
 	display: block;
@@ -99,7 +96,7 @@ textarea{
 #zet:has(#piv15:checked) ~svg #eka15{display: block}
 .m_2:checked ~svg #eva2{display: block}
 #zet{padding: 0 1%}
-#zet, #zet label {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+#zet, #zet label {user-select: none;}
 #zet label {
 	padding:0 4px;
 	display: inline-block
@@ -110,27 +107,22 @@ textarea{
 	width:100%;
 	max-width:1600px
 	}
-#ja00 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja00 {user-select: none}
 #ja02 label{
 	width:100%;
 	height:100%;
-	display:-webkit-box;
-	display:-ms-flexbox;
 	display:flex;
-	-webkit-box-pack:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
+	justify-content:center;
 	}
-#ja03 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
-#ja04 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
-#ja05 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
-#ja06 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
-#ja07 {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}
+#ja03 {user-select: none}
+#ja04 {user-select: none}
+#ja05 {user-select: none}
+#ja06 {user-select: none}
+#ja07 {user-select: none}
 /***/
-#menu{display: -ms-grid;display: grid}
+#menu{display: grid}
 #menu div {
 	margin:3px;
-	display: -ms-grid;
 	display: grid;
 	place-items: center;
 	text-transform: uppercase;
@@ -142,268 +134,78 @@ textarea{
 	}
 @media screen and (max-width: 3200px) {
 #menu {
--ms-grid-columns: 2fr 2fr 24px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 grid-template-columns: 2fr 2fr 24px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
--ms-grid-rows:1fr;
 grid-template-rows:1fr;width:100%;height:46px;
 }
-#menu > *:nth-child(1) {
-		-ms-grid-row:1;
-		-ms-grid-column:1;
-}
-#menu > *:nth-child(2) {
-		-ms-grid-row:1;
-		-ms-grid-column:2;
-}
-#menu > *:nth-child(3) {
-		-ms-grid-row:1;
-		-ms-grid-column:3;
-}
-#menu > *:nth-child(4) {
-		-ms-grid-row:1;
-		-ms-grid-column:4;
-}
-#menu > *:nth-child(5) {
-		-ms-grid-row:1;
-		-ms-grid-column:5;
-}
-#menu > *:nth-child(6) {
-		-ms-grid-row:1;
-		-ms-grid-column:6;
-}
-#menu > *:nth-child(7) {
-		-ms-grid-row:1;
-		-ms-grid-column:7;
-}
-#menu > *:nth-child(8) {
-		-ms-grid-row:1;
-		-ms-grid-column:8;
-}
-#menu > *:nth-child(9) {
-		-ms-grid-row:1;
-		-ms-grid-column:9;
-}
-#menu > *:nth-child(10) {
-		-ms-grid-row:1;
-		-ms-grid-column:10;
-}
-#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:1/1/2/2}
-#ja01{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:1;grid-area:1/2/2/3}
-#ja02{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:1;grid-area:1/3/2/4}
-#ja03{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:1;grid-area:1/4/2/5}
-#ja04{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:1;grid-area:1/5/2/6}
-#ja05{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:6;-ms-grid-column-span:1;grid-area:1/6/2/7}
-#ja06{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:7;-ms-grid-column-span:1;grid-area:1/7/2/8}
-#ja07{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:8;-ms-grid-column-span:1;grid-area:1/8/2/9}
-#ja08{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:9;-ms-grid-column-span:1;grid-area:1/9/2/10}
-#ja09{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:10;-ms-grid-column-span:1;grid-area:1/10/2/11}
+#ja00{grid-area:1/1/2/2}
+#ja01{grid-area:1/2/2/3}
+#ja02{grid-area:1/3/2/4}
+#ja03{grid-area:1/4/2/5}
+#ja04{grid-area:1/5/2/6}
+#ja05{grid-area:1/6/2/7}
+#ja06{grid-area:1/7/2/8}
+#ja07{grid-area:1/8/2/9}
+#ja08{grid-area:1/9/2/10}
+#ja09{grid-area:1/10/2/11}
 }
 @media screen and (max-width: 1080px) {
-#menu {-ms-grid-columns: 2fr 1fr 1fr 2fr 1fr 1fr;grid-template-columns: 2fr 1fr 1fr 2fr 1fr 1fr;
--ms-grid-rows:1fr 1fr 1fr;
+#menu {grid-template-columns: 2fr 1fr 1fr 2fr 1fr 1fr;
 grid-template-rows:1fr 1fr 1fr;height:170px;}
-#menu > *:nth-child(1) {
-		-ms-grid-row:1;
-		-ms-grid-column:1;}
-#menu > *:nth-child(2) {
-		-ms-grid-row:1;
-		-ms-grid-column:2;}
-#menu > *:nth-child(3) {
-		-ms-grid-row:1;
-		-ms-grid-column:3;}
-#menu > *:nth-child(4) {
-		-ms-grid-row:1;
-		-ms-grid-column:4;}
-#menu > *:nth-child(5) {
-		-ms-grid-row:1;
-		-ms-grid-column:5;}
-#menu > *:nth-child(6) {
-		-ms-grid-row:1;
-		-ms-grid-column:6;}
-#menu > *:nth-child(7) {
-		-ms-grid-row:2;
-		-ms-grid-column:1;}
-#menu > *:nth-child(8) {
-		-ms-grid-row:2;
-		-ms-grid-column:2;}
-#menu > *:nth-child(9) {
-		-ms-grid-row:2;
-		-ms-grid-column:3;}
-#menu > *:nth-child(10) {
-		-ms-grid-row:2;
-		-ms-grid-column:4;}
-#menu > *:nth-child(11) {
-		-ms-grid-row:2;
-		-ms-grid-column:5;}
-#menu > *:nth-child(12) {
-		-ms-grid-row:2;
-		-ms-grid-column:6;}
-#menu > *:nth-child(13) {
-		-ms-grid-row:3;
-		-ms-grid-column:1;}
-#menu > *:nth-child(14) {
-		-ms-grid-row:3;
-		-ms-grid-column:2;}
-#menu > *:nth-child(15) {
-		-ms-grid-row:3;
-		-ms-grid-column:3;}
-#menu > *:nth-child(16) {
-		-ms-grid-row:3;
-		-ms-grid-column:4;}
-#menu > *:nth-child(17) {
-		-ms-grid-row:3;
-		-ms-grid-column:5;}
-#menu > *:nth-child(18) {
-		-ms-grid-row:3;
-		-ms-grid-column:6;}
-#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:3;grid-area:1/1/2/4}
-#ja01{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:2;grid-area:1/4/2/6}
-#ja02{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:6;-ms-grid-column-span:1;grid-area:1/6/2/7}
-#ja03{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:2/1/3/2}
-#ja04{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:2;grid-area:2/2/3/4}
-#ja05{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:1;grid-area:2/4/3/5}
-#ja06{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:3/1/4/3;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}
-#ja07{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:2;grid-area:3/3/4/5;-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3}
-#ja08{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:2;grid-area:2/5/3/7;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
-#ja09{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:2;grid-area:3/5/4/7}
+#ja00{grid-area:1/1/2/4}
+#ja01{grid-area:1/4/2/6}
+#ja02{grid-area:1/6/2/7}
+#ja03{grid-area:2/1/3/2}
+#ja04{grid-area:2/2/3/4}
+#ja05{grid-area:2/4/3/5}
+#ja06{grid-area:3/1/4/3;order:2}
+#ja07{grid-area:3/3/4/5;order:3}
+#ja08{grid-area:2/5/3/7;order:1}
+#ja09{grid-area:3/5/4/7}
 }
 @media screen and (max-width: 320px) {
-#menu {-ms-grid-columns: 2fr 1fr 1fr 1fr 1fr;grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
--ms-grid-rows:1fr 1fr 1fr 1fr 1fr;
+#menu {grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 grid-template-rows:1fr 1fr 1fr 1fr 1fr;height:200px;}
-#menu > *:nth-child(1) {
-		-ms-grid-row:1;
-		-ms-grid-column:1;}
-#menu > *:nth-child(2) {
-		-ms-grid-row:1;
-		-ms-grid-column:2;}
-#menu > *:nth-child(3) {
-		-ms-grid-row:1;
-		-ms-grid-column:3;}
-#menu > *:nth-child(4) {
-		-ms-grid-row:1;
-		-ms-grid-column:4;}
-#menu > *:nth-child(5) {
-		-ms-grid-row:1;
-		-ms-grid-column:5;}
-#menu > *:nth-child(6) {
-		-ms-grid-row:2;
-		-ms-grid-column:1;}
-#menu > *:nth-child(7) {
-		-ms-grid-row:2;
-		-ms-grid-column:2;}
-#menu > *:nth-child(8) {
-		-ms-grid-row:2;
-		-ms-grid-column:3;}
-#menu > *:nth-child(9) {
-		-ms-grid-row:2;
-		-ms-grid-column:4;}
-#menu > *:nth-child(10) {
-		-ms-grid-row:2;
-		-ms-grid-column:5;}
-#menu > *:nth-child(11) {
-		-ms-grid-row:3;
-		-ms-grid-column:1;}
-#menu > *:nth-child(12) {
-		-ms-grid-row:3;
-		-ms-grid-column:2;}
-#menu > *:nth-child(13) {
-		-ms-grid-row:3;
-		-ms-grid-column:3;}
-#menu > *:nth-child(14) {
-		-ms-grid-row:3;
-		-ms-grid-column:4;}
-#menu > *:nth-child(15) {
-		-ms-grid-row:3;
-		-ms-grid-column:5;}
-#menu > *:nth-child(16) {
-		-ms-grid-row:4;
-		-ms-grid-column:1;}
-#menu > *:nth-child(17) {
-		-ms-grid-row:4;
-		-ms-grid-column:2;}
-#menu > *:nth-child(18) {
-		-ms-grid-row:4;
-		-ms-grid-column:3;}
-#menu > *:nth-child(19) {
-		-ms-grid-row:4;
-		-ms-grid-column:4;}
-#menu > *:nth-child(20) {
-		-ms-grid-row:4;
-		-ms-grid-column:5;}
-#menu > *:nth-child(21) {
-		-ms-grid-row:5;
-		-ms-grid-column:1;}
-#menu > *:nth-child(22) {
-		-ms-grid-row:5;
-		-ms-grid-column:2;}
-#menu > *:nth-child(23) {
-		-ms-grid-row:5;
-		-ms-grid-column:3;}
-#menu > *:nth-child(24) {
-		-ms-grid-row:5;
-		-ms-grid-column:4;}
-#menu > *:nth-child(25) {
-		-ms-grid-row:5;
-		-ms-grid-column:5;}
-#ja00{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:5;grid-area:1/1/2/6;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}
-#ja01{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:4;grid-area:2/1/3/5;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
-#ja02{-ms-grid-row:2;-ms-grid-row-span:1;-ms-grid-column:5;-ms-grid-column-span:1;grid-area:2/5/3/6}
-#ja03{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:3/1/4/2}
-#ja04{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:2;-ms-grid-column-span:2;grid-area:3/2/4/4}
-#ja05{-ms-grid-row:3;-ms-grid-row-span:1;-ms-grid-column:4;-ms-grid-column-span:2;grid-area:3/4/4/6}
-#ja06{-ms-grid-row:4;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:4/1/5/3}
-#ja07{-ms-grid-row:4;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:3;grid-area:4/3/5/6}
-#ja08{-ms-grid-row:5;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:5/1/6/3}
-#ja09{-ms-grid-row:5;-ms-grid-row-span:1;-ms-grid-column:3;-ms-grid-column-span:3;grid-area:5/3/6/6}
+#ja00{grid-area:1/1/2/6;order:2}
+#ja01{grid-area:2/1/3/5;order:1}
+#ja02{grid-area:2/5/3/6}
+#ja03{grid-area:3/1/4/2}
+#ja04{grid-area:3/2/4/4}
+#ja05{grid-area:3/4/4/6}
+#ja06{grid-area:4/1/5/3}
+#ja07{grid-area:4/3/5/6}
+#ja08{grid-area:5/1/6/3}
+#ja09{grid-area:5/3/6/6}
 main{padding:2px 0px 22px}
 }
 [id^='ja'] {
 	border: 2px solid gray;
-	background:-webkit-gradient(linear, left top, left bottom, from(#e5eeeb), to(#83b0c4));
-	background:-o-linear-gradient(#e5eeeb, #83b0c4);
 	background:linear-gradient(#e5eeeb, #83b0c4)
 	}
 /***************/
 #nok {
 	padding: 15px 25px; 
-	display: -webkit-box; 
-	display: -ms-flexbox; 
 	display: flex; 
-	-webkit-box-pack: center; 
-	    -ms-flex-pack: center; 
-	        justify-content: center; 
-	-ms-flex-wrap: wrap; 
-	    flex-wrap: wrap; 
+	justify-content: center; 
+	flex-wrap: wrap; 
 	background: #abba; 
 	border: 2px solid blue; 
 	border-radius: 5px;
 	}
 #nok label {
 	padding: 3px;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	justify-content: center;
+	align-items: center;
 	border-radius: 3px;
 	background: white;
 	cursor: pointer;
 	font-size: 32px;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+	user-select: none;
 	}
 #nok * input {
 	display: none;
 	}
 #nok label:has(input:checked) {
-	background: -o-linear-gradient(25deg,  white 46%, maroon 50%, white 54%);
 	background: linear-gradient(65deg,  white 46%, maroon 50%, white 54%);
 	}
 .mm {position:absolute; margin: 0}
@@ -416,6 +218,7 @@ main{padding:2px 0px 22px}
 <div id="eddy">
 	<textarea id="edit1" rows="10" cols="45"></textarea>
 	<textarea id="edit2" rows="10" cols="45"></textarea>
+	<textarea id="edit4" rows="10" cols="45"></textarea>
 	<textarea id="edit3" rows="10" cols="45"></textarea>
 </div>
 <div id="bat">
@@ -468,6 +271,7 @@ main{padding:2px 0px 22px}
 		geon='';
 		edit1.value=fb;
 		edit2.value='';
+		edit4.value='';
 		edit3.value=''})
 		.catch(err => {
 		console.log('Oblomingo flyed pass', err);
@@ -685,8 +489,10 @@ function evin(){//перерисовка гребенки
 	edit1.value=molly(txt);
 	edit2.value=conny(txt);
 	edit3.value=cotty(txt);
+	edit4.value=bobby(txt);
 	ja00.innerHTML=cury.reduce((a,b)=>
 		a+=upup(ac[(2*ac.length-b-blind)%ac.length]),'');
+	edit4.style.display='block';
 	edit3.style.display='block';
 	edit2.style.display='block';
 	}
@@ -776,6 +582,8 @@ function newgame(x,y){//x==='ß'
 	edit1.value=[...txt].map((a,i)=>(rega[i])?a:a.toLowerCase()).join('')//txt;	
 	edit2.value=conny(txt);
 	edit3.value=cotty(txt);
+	edit4.value=bobby(txt);
+	edit4.style.display='block';
 	edit3.style.display='block';
 	edit2.style.display='block';
 	 //ключ зашифровки
@@ -860,7 +668,20 @@ function conny(x){// щербатое декодированье красно
 	  if(ac.indexOf(x[i].toLowerCase())>-1)
 	  {if(n%keylen==curx){s+=x[i]}else{s+='_'};  n++;}
 	  else
-	  {s+=' '}
+	  {s+=x[i]}//{s+=' '}//{s+='_'}//
+	}
+	s=[...s].map((x,i)=>(rega[i])?x:upup(x)).join('');
+	return s;
+}
+function bobby(x){// синее декодированье сине
+	x=coddy(x);
+	let s='';
+	for (let i=0; i<x.length; i++){
+	  if('\r\n\t'.indexOf(x[i])>-1){s+=x[i];continue}
+	  if(ac.indexOf(x[i].toLowerCase())>-1)
+	  {s+='_'}
+	  else
+	  {s+=x[i]}//{s+=' '}//{s+='_'}//
 	}
 	s=[...s].map((x,i)=>(rega[i])?x:upup(x)).join('');
 	return s;
@@ -868,13 +689,12 @@ function conny(x){// щербатое декодированье красно
 function cotty(x){// белое подчеркивание
 	x=coddy(x);
 	let s='';
-	let n=0;
 	for (let i=0; i<x.length; i++){
 	  if('\r\n\t'.indexOf(x[i])>-1){s+=x[i];continue}
 	  if(ac.indexOf(x[i])>-1)
-	  {s+='_';  n++;}
+	  {s+='_'}//;  n++;
 	  else
-	  {s+=' '}
+	  {s+='_'}//{s+=x[i]}//{s+=' '}
 	}
 	return s;
 }
@@ -924,6 +744,7 @@ document.addEventListener('keydown', (e) => {// ←↑↓→
 	  }
 });
 function gopp(){//
+	edit4.style.display='none';
 	edit3.style.display='none';
 	edit2.style.display='none';
 	edit1.focus();
