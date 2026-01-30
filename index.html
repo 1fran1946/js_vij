@@ -216,6 +216,7 @@ main{padding:2px 0px 22px}
 	top:-2px;
 	right:0px;
 	color:blue;
+	font-family:sans-serif;
 	font-size:12px;
 	background:transparent;
 	}
@@ -577,7 +578,14 @@ function pars2e(x){//гребенки юзерские
 }
 let rega=[];
 function newgame(x,y){//x==='ß'
-	rega=[...edit1.value].map(x=>x===x.toLowerCase());//запомнить регистр букв
+	const ediva=[...edit1.value];
+	const hasHi=/[A-ZА-Я]/.test(ediva);
+	const hasLo=/[a-zа-я]/.test(ediva);
+	if(hasHi&&!hasLo)
+		rega=ediva.map(x=>false)//запомнить регистр букв
+	else
+		rega=ediva.map(x=>x===x.toLowerCase());//запомнить регистр букв	 
+	//   /[a-zа-я]/.test([...edit1.value]) && /[A-ZА-Я]/.test([...edit1.value]);
 	if (geon) {txt=geon}else{txt=edit1.value.toLowerCase();}
 	pars1e(y);//считаю алфавит
 	keylen=x??1;
