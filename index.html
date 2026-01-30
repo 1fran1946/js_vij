@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- from 11 -->
+<!-- from vigener2026 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
-  <title>Шифр Виженера 18</title>
+  <title>Шифр Виженера 19</title>
   <style>
 *:not(hr), *::after, *::before {
 	font-family:monospace;
@@ -208,13 +208,22 @@ main{padding:2px 0px 22px}
 #nok label:has(input:checked) {
 	background: linear-gradient(65deg,  white 46%, maroon 50%, white 54%);
 	}
+.mma {position:absolute; margin: 0}		
 .mm {position:absolute; margin: 0}
 .pp {visibility:hidden; margin: 1px}
+.mma:after{content:'0';
+	position:absolute;
+	top:-2px;
+	right:0px;
+	color:blue;
+	font-size:12px;
+	background:transparent;
+	}
   </style>
 </head>
 <body>
 <main>
-<div id="ver">v18</div>
+<div id="ver">v19</div>
 <div id="eddy">
 	<textarea id="edit1" rows="10" cols="45"></textarea>
 	<textarea id="edit2" rows="10" cols="45"></textarea>
@@ -591,6 +600,9 @@ function newgame(x,y){//x==='ß'
 		cury.reduce((a,b)=>a+=ac[(2*ac.length-b-blind)%ac.length],'');
 	movez();
 	bel.value=nalf;//alert(nalf);
+	let risk=[...txt].reduce((a,x)=>{//{} буква:количество
+		a.hasOwnProperty(x)?a[x]++:a[x]=1;
+		return a},{});
 	if(nalf<100){
 		aco=new String(ac);
 		asseo=asse.map(c=>c);//new Array(asse);
@@ -598,7 +610,10 @@ function newgame(x,y){//x==='ß'
 		[...ac]
 		.map(c=>'<label class="pp"><span>v</span></label>').join('')+		
 		[...ac]
-		.map(c=>'<label class="mm"><input type="checkbox" name="xi"'+
+		.map(c=>'<label class="mm'+
+		
+			((risk.hasOwnProperty(c))?'':' mma')+
+			'"><input type="checkbox" name="xi"'+
 			' onchange="vist()"><span>'+
 			upup(c)+'</span></label>').join('');
 		let a=[...document.querySelectorAll('.mm')];
