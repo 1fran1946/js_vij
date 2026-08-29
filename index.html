@@ -931,7 +931,7 @@ function sro(x){//построение вероятных длин ключа
 	);
 	let bane=
 
-	'<select id="uran" onchange="newgame(+this.value,nalf);this.blur();this.style.display=`none`;kino.textContent=this.value" '+
+	'<select id="uran" onchange="newgame(+this.value,nalf);this.blur();uran.style.display=`none`;kino.textContent=this.value;kino.style.display=`block`;" '+
 	'>\n'+
 	k.join('')
 	+'</select>\n'+
@@ -943,7 +943,7 @@ duo1.addEventListener('click', (e) => {//
 //menu.style.display='none';
 if(holdem>0){holdem--}else{holdem=0};
 evin();
-console.log('k');
+//console.log('k');
 });
 duo2.addEventListener('click', (e) => {//
 //menu.style.display='none';
@@ -952,7 +952,7 @@ holdem++;
 river+=edit1.value[holdem-1];
 }else{holdem=txt.length};
 evin();
-console.log('v');
+//console.log('v');
 });
  
 </script>
