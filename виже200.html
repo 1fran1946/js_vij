@@ -177,7 +177,7 @@ grid-template-rows:1fr 1fr 1fr;height:170px;}
 grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 /*пять рядов*/
 grid-template-rows:1fr 1fr 1fr 1fr 1fr;height:200px;}
-/*
+/*←↑↓→
 grid-row-start (начало по вертикали) — линия 3.grid-column-start (начало по горизонтали) — линия 4.grid-row-end (конец по вертикали) — линия 4.grid-column-end
 */
 #ja00{grid-area:1/1/2/6;order:2}
@@ -910,7 +910,7 @@ river=river.slice(0,holdem);
 return river+txt.slice(holdem).replaceAll(/[^\r\n\t]/g,'_');
 }
 
-document.addEventListener('keydown', (e) => {// 
+document.addEventListener('keydown', (e) => {// ←↑↓→
 if( [40,38,39,37,96,110].includes(e.keyCode)){
 	switch(e.keyCode) {
 		case 40: {//↓
